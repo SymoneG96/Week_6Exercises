@@ -1,39 +1,44 @@
-# ValueError example
-try:
-    num = int("abc")  # Trying to convert a non-numeric string to an integer
-except ValueError:
-    print("Oops! That was not a valid number. Please try again.")
-else:
-    print(f"The number is: {num}")
-finally:
-    print("Let's try another one.")
+# ValueError
+while True:
+    try:
+        user_input = input("Enter a number: ")
+        number = int(user_input)  # Trying to convert user input to an integer
+        break  # Exit the loop if no error occurs
+    except ValueError:
+        print("Hmm, that doesn't look like a number. Try entering a whole number, like 1, 5, or 100.")
+print(f"You entered: {number}")
+print("Let's try another one...\n")
 
-# NameError example
-try:
-    print(unknown_variable)  # Trying to access a variable that doesn't exist
-except NameError:
-    print("Oops! That variable doesn't exist. Please check your code.")
-else:
-    print("No errors found.")
-finally:
-    print("Let's try another one.")
+# NameError
+while True:
+    try:
+        user_input = input("Enter a variable name: ")
+        print(eval(user_input))  # Trying to print the value of the variable entered by the user
+        break  # Exit the loop if no error occurs
+    except NameError:
+        print("Oops! It seems like that variable hasn't been defined yet. Make sure you've created it before trying to use it.")
+print("Variable found!")
+print("Let's try another one...\n")
 
-# TypeError example
-try:
-    result = "hello" + 123  # Trying to concatenate a string and an integer
-except TypeError:
-    print("Oops! You can't perform that operation on those data types.")
-else:
-    print(f"The result is: {result}")
-finally:
-    print("Let's try another one.")
+# TypeError
+while True:
+    try:
+        user_input1 = input("Enter a string: ")
+        user_input2 = int(input("Enter a number: "))
+        result = user_input1 + user_input2  # Trying to add a string and an integer
+        break  # Exit the loop if no error occurs
+    except TypeError:
+        print("Whoops! You can't add a word and a number directly. Try converting them to the same type first.")
+print(f"Result: {result}")
+print("Let's try another one...\n")
 
-# SyntaxError example
-try:
-    exec("print('Hello, world!'")  # Missing a closing parenthesis
-except SyntaxError:
-    print("Oops! There's a syntax error in your code. Please check it and try again.")
-else:
-    print("No errors found.")
-finally:
-    print("Let's try another one.")
+# SyntaxError
+while True:
+    try:
+        user_input = input("Enter a Python expression: ")
+        eval(user_input)  # Trying to evaluate the expression entered by the user
+        break  # Exit the loop if no error occurs
+    except SyntaxError:
+        print("Uh oh, looks like there's a syntax error in your expression. Double-check for any typos or missing symbols.")
+print("Expression evaluated successfully!")
+print("Let's try another one...\n")
